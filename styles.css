@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root
+{
+    --grey: #CCC;
+    --magenta: #F06;
+}
+
+body
+{
+    width: 100%;
+    background: #edf6f9;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.container
+{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#house
+{
+    width: 150px;
+    stroke: var(--magenta);
+    fill: var(--grey);
+    stroke-dasharray: 65;
+    stroke-dashoffset: 65;
+
+}
+
+#house.like
+{
+    animation: 3s ease-in forwards like;
+}
+
+#house.unlike
+{
+    animation: 3s ease-out forwards unlike;
+}
+
+@keyframes like {
+    0% {
+        stroke-dashoffset: 65;
+        fill: var(--grey);
+    }
+
+    70% {
+        stroke-dashoffset: 0;
+        fill: var(--grey);
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        fill: var(--magenta);
+    }
+}
+
+@keyframes unlike {
+    0% {
+        stroke-dashoffset: 0;
+        fill: var(--magenta);
+    }
+
+    30% {
+        stroke-dashoffset: 0;
+        fill: var(--grey);
+    }
+
+    100% {
+        stroke-dashoffset: 65;
+        fill: var(--grey);
+    }
+}
